@@ -33,6 +33,7 @@ button {
     font-size: 15px;
     background-color: #a02487a3;
     color: white;
+    display: block;
   }
 
 
@@ -44,7 +45,8 @@ button {
 
 .questions,
 .allDoneSection,
-.rightOrWrong {
+.rightOrWrong,
+.viewHignScores {
     width: 70%;
     margin: auto;
     display: none;
@@ -52,7 +54,7 @@ button {
 
 
 
-.answerOne {
+.answer {
     display: block;
     margin-top: 5px;
 }

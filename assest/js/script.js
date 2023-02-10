@@ -1,7 +1,7 @@
 
 var mainEl = document.querySelector("main");
 
-var viewHighScores = document.getElementById('viewHighScores');
+var viewHighScoresButton = document.getElementById('viewHighScores');
 var countdownEl = document.getElementById('countdown');
 var startquizButton = document.querySelector('#start-quiz');
 
@@ -12,11 +12,16 @@ var answerTwoButton = document.getElementById('answerTwo');
 var answerThreeButton = document.getElementById('answerThree');
 var answerFourButton = document.getElementById('answerFour');
 
+
 var rightOrWrongLabel = document.getElementById('rightOrWrongLabel');
 
 var finalScoreEl = document.getElementById('finalScore');
 var enterInitials = document.getElementById('enterInitials');
 var initialButton = document.getElementById('initialButton');
+
+var highScoreListEl = document.getElementById("highScoreList");
+var listEl = document.createElement("ol");
+var liItem = document.createElement("li");
 
 
 var questionsContent = [
@@ -50,8 +55,10 @@ var timeLeft = 0;
 
 var finalScore = 0;
 
+
+
 function countdown() {
-    var timeLeft = 75;
+    
 
     var timeInterval = setInterval(function () {
         if (timeLeft >= 1) {
@@ -83,7 +90,7 @@ function changeQuestions(sectionName) {
 startquizButton.addEventListener("click", function() {
     mainEl.style.display = "none";
     document.getElementById('questions').style.display = 'block';
-
+    timeLeft = 75;
     countdown();
     showQuestions();
 });
@@ -100,8 +107,10 @@ function showQuestions() {
 
 function chooseAnswer(answerButton) {
     if (answerButton === correctAnswers[questionIndex]) {
+        document.getElementById('rightOrWrong').style.display = "block";
         rightOrWrongLabel.textContent = "Correct!"; 
     } else {
+        document.getElementById('rightOrWrong').style.display = "block";
         rightOrWrongLabel.textContent = "Wrong!";
         timeLeft = timeLeft - 15;
     }
@@ -126,13 +135,29 @@ initialButton.addEventListener("click", function(event) {
     };
     localStorage.setItem("name", JSON.stringify(name));
 
+   
+    showHighScores();
 
 });
 
 
+viewHighScoresButton.addEventListener("click", showHighScores);
 
 
 
+function showHighScores() {
+   
+    var name = JSON.parse(localStorage.getItem("name"));
+
+    
+    liItem.textContent = name.initials + " - " + name.score;
+
+    highScoreListEl.appendChild(listEl);
+    listEl.appendChild(liItem); 
+
+
+
+}
 
 
 
