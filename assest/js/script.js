@@ -48,7 +48,7 @@ var questionIndex = 0;
  
 var timeLeft = 0;
 
-
+var finalScore = 0;
 
 function countdown() {
     var timeLeft = 75;
@@ -120,7 +120,11 @@ function answerQuestions(answerButton) {
 
 initialButton.addEventListener("click", function(event) {
     event.preventDefault();
-    
+    var name = {
+        initials: enterInitials.ariaValueMax,
+        score: finalScore,
+    };
+    localStorage.setItem("name", JSON.stringify(name));
 
 
 });
