@@ -98,7 +98,7 @@ function showQuestions() {
 };
 
 
-function answerQuestions(answerButton) {
+function chooseAnswer(answerButton) {
     if (answerButton === correctAnswers[questionIndex]) {
         rightOrWrongLabel.textContent = "Correct!"; 
     } else {

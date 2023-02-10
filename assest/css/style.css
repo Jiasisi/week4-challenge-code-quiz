@@ -43,7 +43,8 @@ button {
 }
 
 .questions,
-.allDoneSection {
+.allDoneSection,
+.rightOrWrong {
     width: 70%;
     margin: auto;
     display: none;
@@ -60,7 +61,8 @@ button {
 
 
 h1,
-p {
+p,
+h3 {
     text-align: center;
 }
 
