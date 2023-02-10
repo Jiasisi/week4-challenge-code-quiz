@@ -1,0 +1,66 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  background-color: #eff5f8;
+  color: #001b44;
+}
+
+.highscores {
+    display: inline-block;
+
+}
+
+.timer {
+    float: right;
+}
+
+
+main {
+    width: 70%;
+    margin: auto;
+    display: block;
+}
+
+button {
+    padding: 10px;
+    
+    cursor: pointer;
+    font-size: 15px;
+    background-color: #a02487a3;
+    color: white;
+  }
+
+
+#start-quiz {
+
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.questions,
+.allDoneSection {
+    width: 70%;
+    margin: auto;
+    display: none;
+}
+
+
+
+.answerOne {
+    display: block;
+    margin-top: 5px;
+}
+
+
+
+
+h1,
+p {
+    text-align: center;
+}
+

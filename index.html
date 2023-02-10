@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="./assest/css/style.css" />
+    <title>Coding Quiz Challenge</title>
+  </head>
+
+  <body>
+    <header>
+        <div class="highscores">
+            <h2 id="viewHighScores">View Highscores</h2>
+        </div>
+
+        <div class="timer">
+            <h2>Time: <span id="countdown"></span></h2>
+        </div>
+
+
+    </header>
+
+    <main>
+        <h1>Coding Quiz Challenge</h1>
+        <p>Try to answer the following code-related questions within the time limit. Keep in mind that incorrect answers will penalize your scoretime by 15 seconds!</p>
+        <button id="start-quiz">Start Quiz</button>
+
+    </main>
+
+    <div id="questions" class="questions">
+        <h2 id="questionsTitle"></h2>
+        <button id="answerOne" class="answer">1. strings</button>
+        <button id="answerTwo" class="answer">2. booleans</button>
+        <button id="answerThree" class="answer">3. alerts</button>
+        <button id="answerFour" class="answer">4. numbers</button>
+    </div>
+
+    <div id="rightOrWrong">
+        <h3 id="rightOrWrongLabel"></h3>
+
+
+    </div>
+
+    <div id="allDoneSection" class="allDoneSection">
+        <h2>All Done</h2>
+
+        <div id="finalScore"></div>
+        <input type="text" id="enterInitials" value="Enter Initials">
+        <button id="initialButton">Submit</button>
+
+    </div>
+
+
+
+    <script src="./assest/js/script.js"></script>
+  </body>
+
+
+
+
+</html>
