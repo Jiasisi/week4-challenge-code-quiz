@@ -135,7 +135,11 @@ initialButton.addEventListener("click", function(event) {
     };
     localStorage.setItem("name", JSON.stringify(name));
 
-   
+    document.getElementById('questions').style.display = 'none';
+    document.getElementById('rightOrWrong').style.display = 'none';
+    document.getElementById('allDoneSection').style.display = 'none';
+    document.getElementById('viewHighScores').style.display = 'block';
+
     showHighScores();
 
 });

@@ -97,3 +97,9 @@ You are required to submit BOTH of the following for review:
 ---
 
 © 2023 edX Boot Camps LLC. Confidential and Proprietary. All Rights Reserved.
+
+## Links
+The URL of the functional, deployed application: https://jiasisi.github.io/week4-challenge-code-quiz/Links to an external site.
+
+The URL of the GitHub repository: https://github.com/Jiasisi/week4-challenge-code-quiz
+
