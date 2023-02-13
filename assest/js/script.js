@@ -1,5 +1,6 @@
 
 var mainEl = document.querySelector("main");
+var bodyEl = document.querySelector("body");
 
 var viewHighScoresButton = document.getElementById('viewHighScores');
 var countdownEl = document.getElementById('countdown');
@@ -170,7 +171,13 @@ function showHighScores() {
 
 
 
-viewHighScoresButton.addEventListener("click", showHighScores);
+viewHighScoresButton.addEventListener("click", function() {
+    
+
+    document.getElementById('viewHignScores').style.display = 'block';
+    
+    showHighScores();
+});
 
 
 
