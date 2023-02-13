@@ -103,3 +103,9 @@ The URL of the functional, deployed application: https://jiasisi.github.io/week4
 
 The URL of the GitHub repository: https://github.com/Jiasisi/week4-challenge-code-quiz
 
+## screenshots
+![](./assest/images/picture1.png)
+![](./assest/images/picture2.png)
+![](./assest/images/picture3.png)
+![](./assest/images/picture4.png)
+

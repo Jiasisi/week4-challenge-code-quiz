@@ -20,8 +20,11 @@ var enterInitials = document.getElementById('enterInitials');
 var initialButton = document.getElementById('initialButton');
 
 var highScoreListEl = document.getElementById("highScoreList");
-var listEl = document.createElement("ol");
+
 var liItem = document.createElement("li");
+
+var goBackButton = document.getElementById('goback');
+var clearHighscoresButton = document.getElementById('clearhighscores');
 
 
 var questionsContent = [
@@ -67,7 +70,7 @@ function countdown() {
         } else {
             countdownEl.textContent = "";
             clearInterval(timeInterval);
-            showAllDown();
+            showHighScores();
         }
     }, 1000);
 
@@ -75,14 +78,13 @@ function countdown() {
 
 
 function changeQuestions(sectionName) {  
-    var x =
-    document.getElementById(sectionName);
+    var x = document.getElementById(sectionName);
     if (x.style.display === "none") {
         x.style.display = "block";
     } else {
         x.style.display = "none";
     }
-};
+}; 
 
 
 
@@ -116,6 +118,10 @@ function chooseAnswer(answerButton) {
     }
     questionIndex = questionIndex + 1;
     if (questionIndex >= 5) {
+        document.getElementById('questions').style.display = 'none';
+        document.getElementById('rightOrWrong').style.display = 'none';
+
+
         document.getElementById("allDoneSection").style.display = "block";
         finalScore = timeLeft;
         finalScoreEl.textContent = "Your final score is " + finalScore + ".";
@@ -127,47 +133,58 @@ function chooseAnswer(answerButton) {
 };
  
 
+
 initialButton.addEventListener("click", function(event) {
     event.preventDefault();
-    var name = {
-        initials: enterInitials.ariaValueMax,
+
+    document.getElementById('allDoneSection').style.display = 'none';
+    document.getElementById('viewHignScores').style.display = 'block';
+
+
+    var nameAndGrade = {
+        initials: enterInitials.value,
         score: finalScore,
     };
-    localStorage.setItem("name", JSON.stringify(name));
 
-    document.getElementById('questions').style.display = 'none';
-    document.getElementById('rightOrWrong').style.display = 'none';
-    document.getElementById('allDoneSection').style.display = 'none';
-    document.getElementById('viewHighScores').style.display = 'block';
+    localStorage.setItem("nameAndGrade", JSON.stringify(nameAndGrade));
 
+
+    
     showHighScores();
 
 });
+
+
+function showHighScores() {
+   
+    var scorelist = JSON.parse(localStorage.getItem("nameAndGrade"));
+
+    
+    if (scorelist !==null) {
+        liItem.textContent = scorelist.initials + " -- " + scorelist.score;
+        highScoreListEl.appendChild(liItem);
+    };
+ 
+
+};
+
 
 
 viewHighScoresButton.addEventListener("click", showHighScores);
 
 
 
-function showHighScores() {
-   
-    var name = JSON.parse(localStorage.getItem("name"));
 
-    
-    liItem.textContent = name.initials + " - " + name.score;
+clearHighscoresButton.addEventListener('click', function() {
+    highScoreListEl.innerHTML = " ";
 
-    highScoreListEl.appendChild(listEl);
-    listEl.appendChild(liItem); 
+});
 
 
+goBackButton.addEventListener('click', function() {
+    window.location.reload();
 
-}
-
-
-
-
-
-
+});
 
 
 
